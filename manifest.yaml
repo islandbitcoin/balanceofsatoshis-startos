@@ -1,7 +1,10 @@
 id: balanceofsatoshis 
 title: Balance of Satoshis
-version: 11.64.2
-release-notes: Initial Release to EmbassyOS v0.3.0.3
+version: 12.16.2
+release-notes: | 
+  * Update to BOS v12.16.2
+  * Added LND v0.15.0 compatibility
+  * Updated documentation
 license: mit
 wrapper-repo: "https://github.com/cryptodread/balanceofsatoshis-wrapper"
 upstream-repo: "https://github.com/alexbosworth/balanceofsatoshis"
@@ -57,7 +60,7 @@ interfaces:
       - http
 dependencies:
   lnd:
-    version: ">=0.11.0 <0.15.0"
+    version: ">=0.11.0 <0.16.0"
     requirement:
       type: required
     config: ~
