@@ -4,9 +4,6 @@ ADD . /
 RUN cd balanceofsatoshis && npm i -g balanceofsatoshis
 
 WORKDIR /usr/local/lib/
-RUN npm install --global serve
-RUN npm install --global xterm
-ADD ./homepage.html /usr/local/lib/index.html
 
 WORKDIR /
 

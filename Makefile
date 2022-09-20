@@ -11,6 +11,9 @@ all: verify
 verify: balanceofsatoshis.s9pk $(S9PK_PATH)
 	embassy-sdk verify s9pk $(S9PK_PATH)
 
+install: all
+	embassy-cli package install balanceofsatoshis.s9pk
+
 clean:
 	rm -f image.tar
 	rm -f balanceofsatoshis.s9pk
