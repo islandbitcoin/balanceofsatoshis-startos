@@ -1,7 +1,10 @@
-FROM arm64v8/node:16
+FROM node:lts-alpine
+
+RUN apk add --no-cache --upgrade bash
+
 ENV BOS_DEFAULT_SAVED_NODE=embassy
-ADD . /
-RUN cd balanceofsatoshis && npm i -g balanceofsatoshis
+COPY balanceofsatoshis/ /
+RUN npm i -g balanceofsatoshis
 
 WORKDIR /usr/local/lib/
 
