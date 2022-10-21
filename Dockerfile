@@ -1,22 +1,15 @@
-FROM arm64v8/node:16
+FROM node:lts-alpine
+
+# arm64 or amd64
+ARG PLATFORM
+
+RUN apk add --no-cache --upgrade bash
+
 ENV BOS_DEFAULT_SAVED_NODE=embassy
-ADD . /
-RUN cd balanceofsatoshis && npm i -g balanceofsatoshis
-
-WORKDIR /usr/local/lib/
-RUN npm install --global serve
-RUN npm install --global xterm
-ADD ./homepage.html /usr/local/lib/index.html
-
-WORKDIR /
-
-ADD ./docker_entrypoint.sh /usr/local/bin/docker_entrypoint.sh
-RUN chmod a+x /usr/local/bin/docker_entrypoint.sh
-ADD assets/utils/check-web.sh /usr/local/bin/check-web.sh
-RUN chmod +x /usr/local/bin/check-web.sh
+RUN npm i -g balanceofsatoshis
 
 WORKDIR /balanceofsatoshis/
 
-EXPOSE 80
-
-ENTRYPOINT ["/usr/local/bin/docker_entrypoint.sh"]
+ADD credentials.json /credentials.json
+ADD ./docker_entrypoint.sh /usr/local/bin/docker_entrypoint.sh
+RUN chmod a+x /usr/local/bin/docker_entrypoint.sh

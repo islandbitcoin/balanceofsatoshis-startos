@@ -1,7 +1,8 @@
 id: balanceofsatoshis 
 title: Balance of Satoshis
-version: 11.64.2
-release-notes: Initial Release to EmbassyOS v0.3.0.3
+version: 13.1.5
+release-notes: | 
+  * Update to BoS v13.1.5
 license: mit
 wrapper-repo: "https://github.com/cryptodread/balanceofsatoshis-wrapper"
 upstream-repo: "https://github.com/alexbosworth/balanceofsatoshis"
@@ -10,13 +11,12 @@ marketing-site: "https://github.com/alexbosworth"
 donation-url: "https://yalls.org/hashcash/7bff5e4f-4534-4cca-8daa-3d5a3c239919/"
 build: ["make"]
 description:
-  short: Balance of Satoshis - Tool for working with the balance of your satoshis on LND
-  long: |
-    Balance of Satoshis - Tool for working with the balance of your satoshis on Lightning Network Daemon, using commands for working with LND balances.
+  short: A Tool for working with the balance of your satoshis on LND
+  long: A command line tool for working with the balance of your satoshis on your self-hosted Lightning Network Daemon, using the command line for working with LND balances. You can open balanced channels with other participants, and manually monitor your channel fees and HTLCs.
 assets:
   license: LICENSE
   icon: icon.png
-  instructions: docs/instructions.md
+  instructions: instructions.md
   docker-images: image.tar
 main:
   type: docker
@@ -26,7 +26,11 @@ main:
   mounts:
     lnd: /mnt/lnd
     main: /root
-health-checks: {}
+health-checks: 
+  web-ui:
+    name: Command Line Interface
+    success-message: BalanceofSatoshis is ready
+    type: script
 config: ~
 volumes:
   main:
@@ -58,7 +62,7 @@ interfaces:
       - http
 dependencies:
   lnd:
-    version: ">=0.11.0 <0.15.0"
+    version: ">=0.11.0 <0.16.0"
     requirement:
       type: required
     config: ~

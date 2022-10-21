@@ -1,2 +1,4 @@
 balanceofsatoshis.s9pk
 image.tar
+scripts/*.js
+docker-images/
