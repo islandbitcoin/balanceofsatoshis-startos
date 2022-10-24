@@ -1,8 +1,7 @@
 id: balanceofsatoshis 
 title: Balance of Satoshis
 version: 13.1.5
-release-notes: | 
-  * Update to BoS v13.1.5
+release-notes: Update BoS v13.1.5 to run on x86_64 architecture
 license: mit
 wrapper-repo: "https://github.com/cryptodread/balanceofsatoshis-wrapper"
 upstream-repo: "https://github.com/alexbosworth/balanceofsatoshis"
@@ -34,11 +33,7 @@ health-checks:
 config: ~
 volumes:
   main:
-    type: data
-  compat:
-    type: assets 
-  utils:
-    type: assets
+    type: data 
   lnd:
     type: pointer
     package-id: lnd
