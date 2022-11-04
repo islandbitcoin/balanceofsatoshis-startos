@@ -1,10 +1,7 @@
 id: balanceofsatoshis 
-title: Balance of Satoshis
-version: 12.16.2
-release-notes: | 
-  * Update to BOS v12.16.2
-  * Added LND v0.15.0 compatibility
-  * Updated documentation
+title: "Balance of Satoshis"
+version: 13.1.5
+release-notes: Update BoS v13.1.5 to run on x86_64 architecture
 license: mit
 wrapper-repo: "https://github.com/cryptodread/balanceofsatoshis-wrapper"
 upstream-repo: "https://github.com/alexbosworth/balanceofsatoshis"
@@ -18,25 +15,30 @@ description:
 assets:
   license: LICENSE
   icon: icon.png
-  instructions: docs/instructions.md
-  docker-images: image.tar
+  instructions: instructions.md
+containers:
+  main:
+    image: main
+    mounts:
+      lnd: /mnt/lnd
+      main: /root
 main:
-  type: docker
-  image: main
-  entrypoint: "docker_entrypoint.sh"
-  args: []
-  mounts:
-    lnd: /mnt/lnd
-    main: /root
-health-checks: {}
-config: ~
+  type: script
+health-checks: 
+  web-ui:
+    name: Command Line Interface
+    success-message: BalanceofSatoshis is ready
+    type: script
+config:
+  get:
+    type: script
+  set:
+    type: script
+properties:
+  type: script
 volumes:
   main:
-    type: data
-  compat:
-    type: assets 
-  utils:
-    type: assets
+    type: data 
   lnd:
     type: pointer
     package-id: lnd
