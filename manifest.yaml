@@ -1,7 +1,9 @@
 id: balanceofsatoshis 
 title: "Balance of Satoshis"
 version: 13.1.5
-release-notes: Update BoS v13.1.5 to run on x86_64 architecture
+release-notes: |
+  * Update BoS v13.1.5 to run on x86_64 architecture
+  * Fix backup restore
 license: mit
 wrapper-repo: "https://github.com/cryptodread/balanceofsatoshis-wrapper"
 upstream-repo: "https://github.com/alexbosworth/balanceofsatoshis"
@@ -91,8 +93,8 @@ backup:
     args:
       - duplicity
       - restore
-      - /root/data
       - /mnt/backup
+      - /root/data
     mounts:
       BACKUP: "/mnt/backup"
       main: "/root/data"
