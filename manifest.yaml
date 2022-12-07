@@ -1,8 +1,9 @@
 id: balanceofsatoshis 
 title: "Balance of Satoshis"
-version: 13.1.5
+version: 13.10.5
 release-notes: |
-  * Update BoS v13.1.5 to run on x86_64 architecture
+  * Update to BoS v13.10.5
+  * Build for x86_64 architecture
   * Fix backup restore
 license: mit
 wrapper-repo: "https://github.com/cryptodread/balanceofsatoshis-wrapper"
@@ -26,11 +27,7 @@ main:
   mounts:
     main: /root
     lnd: /mnt/lnd
-health-checks: 
-  web-ui:
-    name: Command Line Interface
-    success-message: BalanceofSatoshis is ready
-    type: script
+health-checks: {}
 config:
   get:
     type: script
