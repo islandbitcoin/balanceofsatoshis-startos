@@ -10,9 +10,6 @@ mkdir -p /root/.bos/embassy
 chmod -R a+x /root/.bos
 mv /credentials.json /root/.bos/embassy/credentials.json
 chmod a+x /root/.bos/embassy/credentials.json
-echo "Starting xterm UI..."
-cd /usr/local/lib
-serve --cors --single --no-clipboard --no-compression --symlinks
 
 echo "Checking for peers..."
 
@@ -21,4 +18,3 @@ while true;
 do bos peers;
 sleep 20000;
 done
-
