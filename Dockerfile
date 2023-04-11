@@ -7,10 +7,11 @@ ARG ARCH
 RUN apk add --no-cache --upgrade bash
 
 ENV BOS_DEFAULT_SAVED_NODE=embassy
-RUN npm i -g balanceofsatoshis
+RUN npm i -g balanceofsatoshis@13.31.6
 
 WORKDIR /balanceofsatoshis/
 
 ADD credentials.json /credentials.json
 ADD ./docker_entrypoint.sh /usr/local/bin/docker_entrypoint.sh
-RUN chmod a+x /usr/local/bin/docker_entrypoint.sh
+ADD check-cmd.sh /usr/local/bin/check-cmd.sh
+RUN chmod a+x /usr/local/bin/*.sh

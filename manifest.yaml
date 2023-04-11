@@ -1,10 +1,10 @@
 id: balanceofsatoshis 
 title: "Balance of Satoshis"
-version: 13.10.5
+version: 13.31.6
 release-notes: |
-  * Update to BoS v13.10.5
-  * Build for x86_64 architecture
-  * Fix backup restore
+  * Update to BoS v13.31.6
+  * Added command-line health check
+  * Update to LND version dependency
 license: mit
 wrapper-repo: "https://github.com/cryptodread/balanceofsatoshis-wrapper"
 upstream-repo: "https://github.com/alexbosworth/balanceofsatoshis"
@@ -27,12 +27,18 @@ main:
   mounts:
     main: /root
     lnd: /mnt/lnd
-health-checks: {}
-config:
-  get:
-    type: script
-  set:
-    type: script
+health-checks: 
+  main:
+    name: Command Line
+    success-message: Balance of Satoshis commands are responding. You may now connect via ssh
+    type: docker
+    image: main
+    entrypoint: "check-cmd.sh"
+    args: []
+    inject: true
+    system: false
+    io-format: json
+config: ~
 properties:
   type: script
 volumes:
@@ -61,7 +67,7 @@ interfaces:
       - http
 dependencies:
   lnd:
-    version: ">=0.11.0 <0.16.0"
+    version: ">=0.11.0 <0.17.0"
     requirement:
       type: required
     config: ~
