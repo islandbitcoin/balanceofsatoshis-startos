@@ -4,6 +4,7 @@ version: 13.15.0
 release-notes: |
   * Update to BoS v13.15.0
   * Added command-line health check
+  * Update to LND version dependency
 license: mit
 wrapper-repo: "https://github.com/cryptodread/balanceofsatoshis-wrapper"
 upstream-repo: "https://github.com/alexbosworth/balanceofsatoshis"
@@ -66,7 +67,7 @@ interfaces:
       - http
 dependencies:
   lnd:
-    version: ">=0.11.0 <0.16.0"
+    version: ">=0.11.0 <0.17.0"
     requirement:
       type: required
     config: ~
