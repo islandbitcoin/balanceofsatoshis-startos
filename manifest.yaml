@@ -1,8 +1,8 @@
 id: balanceofsatoshis 
 title: "Balance of Satoshis"
-version: 13.15.0
+version: 13.31.6
 release-notes: |
-  * Update to BoS v13.15.0
+  * Update to BoS v13.31.6
   * Added command-line health check
   * Update to LND version dependency
 license: mit
