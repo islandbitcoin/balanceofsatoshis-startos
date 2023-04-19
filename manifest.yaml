@@ -1,10 +1,8 @@
 id: balanceofsatoshis 
 title: "Balance of Satoshis"
-version: 13.31.6
+version: 14.0.0
 release-notes: |
-  * Update to BoS v13.31.6
-  * Added command-line health check
-  * Update to LND version dependency
+  * Update to BoS v14.0.0
 license: mit
 wrapper-repo: "https://github.com/cryptodread/balanceofsatoshis-wrapper"
 upstream-repo: "https://github.com/alexbosworth/balanceofsatoshis"
