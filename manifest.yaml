@@ -1,8 +1,8 @@
 id: balanceofsatoshis 
 title: "Balance of Satoshis"
-version: 14.0.0
+version: 15.0.0
 release-notes: |
-  * Update to BoS v14.0.0
+  * Update to BoS v15.0.0
 license: mit
 wrapper-repo: "https://github.com/cryptodread/balanceofsatoshis-wrapper"
 upstream-repo: "https://github.com/alexbosworth/balanceofsatoshis"
