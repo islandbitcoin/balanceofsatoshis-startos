@@ -1,8 +1,9 @@
-id: balanceofsatoshis 
+id: balanceofsatoshis
 title: "Balance of Satoshis"
-version: 15.0.0
+version: 17.3.0
 release-notes: |
-  * Update to BoS v15.0.0
+  * Update to BoS v17.3.0
+  * Update LND dependency
 license: mit
 wrapper-repo: "https://github.com/cryptodread/balanceofsatoshis-wrapper"
 upstream-repo: "https://github.com/alexbosworth/balanceofsatoshis"
@@ -25,7 +26,7 @@ main:
   mounts:
     main: /root
     lnd: /mnt/lnd
-health-checks: 
+health-checks:
   main:
     name: Command Line
     success-message: Balance of Satoshis commands are responding. You may now connect via ssh
@@ -41,7 +42,7 @@ properties:
   type: script
 volumes:
   main:
-    type: data 
+    type: data
   lnd:
     type: pointer
     package-id: lnd
@@ -76,15 +77,15 @@ backup:
   create:
     type: docker
     image: compat
-    system: true 
-    entrypoint: compat 
-    args: 
+    system: true
+    entrypoint: compat
+    args:
       - duplicity
       - create
       - /mnt/backup
       - /root/data
     mounts:
-      BACKUP: "/mnt/backup" 
+      BACKUP: "/mnt/backup"
       main: "/root/data"
   restore:
     type: docker
