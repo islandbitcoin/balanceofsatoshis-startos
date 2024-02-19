@@ -1,9 +1,8 @@
 id: balanceofsatoshis
 title: "Balance of Satoshis"
-version: 17.3.0.1
+version: 17.8.0
 release-notes: |
-  * Update to BoS v17.3.0
-  * Update LND dependency
+  * Update to BoS v17.8.0
 license: mit
 wrapper-repo: "https://github.com/cryptodread/balanceofsatoshis-wrapper"
 upstream-repo: "https://github.com/alexbosworth/balanceofsatoshis"
