@@ -1,8 +1,8 @@
 id: balanceofsatoshis
 title: "Balance of Satoshis"
-version: 19.5.0
+version: 19.5.5
 release-notes: |
-  * Update to BoS v19.5.0
+  * Update to BoS v19.5.5
 license: mit
 wrapper-repo: "https://github.com/islandbitcoin/balanceofsatoshis-startos"
 upstream-repo: "https://github.com/alexbosworth/balanceofsatoshis"
