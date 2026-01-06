@@ -7,7 +7,8 @@ ARG ARCH
 RUN apk add --no-cache --upgrade bash
 
 ENV BOS_DEFAULT_SAVED_NODE=embassy
-RUN npm i -g balanceofsatoshis@19.5.0
+
+RUN npm i -g balanceofsatoshis@20.0.1
 
 WORKDIR /balanceofsatoshis/
 
