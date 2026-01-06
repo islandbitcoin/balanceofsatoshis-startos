@@ -1,9 +1,8 @@
 id: balanceofsatoshis
 title: "Balance of Satoshis"
-version: 20.0.0
+version: 20.0.1
 release-notes: |
-  * Update to BoS v20.0.0
-  * Bump LND Version
+  * Update to BoS v20.0.1
 license: mit
 wrapper-repo: "https://github.com/islandbitcoin/balanceofsatoshis-startos"
 upstream-repo: "https://github.com/alexbosworth/balanceofsatoshis"
